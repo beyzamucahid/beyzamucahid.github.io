@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>Beyza & Mucahid Wedding</title>
 
+  <!-- Favicon -->
+  <link rel="icon" href="https://beyzamucahid.github.io/static/img/cover.png" type="image/png">
+
   <!-- Open Graph Etiketleri (WhatsApp önizleme için) -->
   <meta property="og:title" content="Beyza & Mucahid Wedding" />
   <meta property="og:description" content="Bir ömür diye çıktığımız bu yolda sizlerin de bize eşlik etmesinden mutluluk duyarız..." />
@@ -26,7 +29,11 @@
     #image {
       max-width: 100%;
       max-height: 90vh;
-      cursor: pointer;
+      cursor: pointer; /* İmleç tipi */
+      transition: transform 0.2s ease;
+    }
+    #image:hover {
+      transform: scale(1.01); /* Hafif efekt istersen */
     }
     #buttons {
       display: none;
