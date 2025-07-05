@@ -1,1 +1,55 @@
-<h1>this is a test file</h1>
+Komple chetgpt
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Etkinlik</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    #image {
+      max-width: 100%;
+      max-height: 90vh;
+      cursor: pointer;
+    }
+    #buttons {
+      display: none;
+      margin-top: 20px;
+    }
+    button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <img id="image" src="https://www.bitmeyenkartus.com.tr/shop/mr/95/myassets/products/786/maskesiz-girilmez-04-copy.jpg" alt="ilk görsel">
+  <div id="buttons">
+    <button onclick="alert('Katıldınız!')">Evet</button>
+    <button onclick="alert('Katılmadınız!')">Hayır</button>
+  </div>
+
+  <script>
+    let clicked = false;
+    document.getElementById("image").addEventListener("click", function () {
+      if (!clicked) {
+        this.src = "https://www.filmonpaper.com/wp-content/uploads/2011/05/TheLordOfTheRingsTrilogy_onesheet_teaser_FrodoLookingUpStyle_USA-3.jpg";
+        document.getElementById("buttons").style.display = "block";
+        clicked = true;
+      }
+    });
+  </script>
+
+</body>
+</html>
