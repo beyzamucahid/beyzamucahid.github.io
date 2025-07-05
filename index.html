@@ -29,11 +29,11 @@
     #image {
       max-width: 100%;
       max-height: 90vh;
-      cursor: pointer; /* İmleç tipi */
+      cursor: pointer;
       transition: transform 0.2s ease;
     }
     #image:hover {
-      transform: scale(1.01); /* Hafif efekt istersen */
+      transform: scale(1.01);
     }
     #buttons {
       display: none;
@@ -44,6 +44,28 @@
       padding: 10px 20px;
       font-size: 18px;
     }
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #111;
+      padding: 10px 0;
+      text-align: center;
+    }
+    footer a {
+      color: #fff;
+      margin: 0 20px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 8px;
+      background-color: #333;
+      transition: background-color 0.2s;
+    }
+    footer a:hover {
+      background-color: #555;
+    }
   </style>
 </head>
 <body>
@@ -53,6 +75,11 @@
     <button onclick="alert('Katıldınız!')">Evet</button>
     <button onclick="alert('Katılmadınız!')">Hayır</button>
   </div>
+
+  <footer>
+    <a href="https://beyzamucahid.github.io/">Ana Sayfa</a>
+    <a href="https://beyzamucahid.github.io/detay">Detay & Katılım</a>
+  </footer>
 
   <script>
     let showingFirst = true;
