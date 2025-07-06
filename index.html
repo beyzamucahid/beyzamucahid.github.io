@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Beyza & Mucahid Wedding</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Favicon -->
   <link rel="icon" href="https://beyzamucahid.github.io/static/img/cover.png" type="image/png" />
@@ -13,8 +13,7 @@
 
   <style>
     html, body, .swiper, .swiper-slide {
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
       background: #f6f5f4;
       font-family: Arial, sans-serif;
       color: #333;
@@ -25,8 +24,7 @@
 
     nav {
       position: fixed;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       width: 100%;
       background-color: #f6f5f4;
       padding: 12px 0;
@@ -59,22 +57,34 @@
       margin-top: 70px;
     }
 
+    /* Slide yapısını optimize et */
     .swiper-slide {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      padding-top: 20px;
-      height: 100%;
+      padding: 20px 0 40px;
       background-color: #f6f5f4;
+      height: auto;          /* yükseklik otomatik */
+      min-height: calc(100vh - 70px); /* navbar hariç tam ekran yüksekliği */
+      overflow: visible;     /* zoom taşmasını engellemek için */
     }
 
-    .swiper-slide img {
+    /* Zoom container zoom için */
+    .swiper-zoom-container {
       width: 90%;
       max-width: 1000px;
       height: auto;
+      overflow: hidden; /* zoom yaparken taşma */
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: auto;
       max-height: 80vh;
       object-fit: contain;
+      user-select: none; /* Zoom esnasında resmin seçilmesini engelle */
+      -webkit-user-drag: none;
     }
 
     .scroll-down {
@@ -144,7 +154,7 @@
         </div>
       </div>
 
-      <!-- Slide 2 (Zoomable) -->
+      <!-- Slide 2 (Zoom) -->
       <div class="swiper-slide">
         <div class="swiper-zoom-container">
           <img src="https://beyzamucahid.github.io/static/img/cover2.png" alt="Görsel 2" />
@@ -160,7 +170,7 @@
   <script>
     const swiper = new Swiper('.swiper', {
       direction: 'vertical',
-      loop: false, // Kaydırınca geri dönme kapalı
+      loop: false,
       pagination: {
         el: '.swiper-pagination',
         clickable: true
@@ -170,7 +180,8 @@
         enabled: true
       },
       zoom: {
-        maxRatio: 3
+        maxRatio: 3,
+        toggle: true, // dokununca zoom kalıcı
       }
     });
   </script>
