@@ -11,16 +11,6 @@
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-  <!-- Allrounder Monument Book Font -->
-  <style>
-    @font-face {
-      font-family: 'Allrounder Monument';
-      src: url('https://fonts.cdnfonts.com/css/allrounder-monument') format('woff2');
-      font-weight: 400;
-      font-style: normal;
-    }
-  </style>
-
   <style>
     html, body {
       margin: 0; padding: 0;
@@ -43,11 +33,16 @@
       border-bottom: 2px solid #6F4F33;
       display: flex;
       justify-content: center;
-      align-items: center;
     }
 
-    nav::after {
-      content: "";
+    .nav-links {
+      display: flex;
+      position: relative;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .nav-divider {
       position: absolute;
       left: 50%;
       top: 50%;
@@ -59,16 +54,23 @@
 
     nav a {
       color: #333;
-      margin: 0 20px;
       text-decoration: none;
       font-size: 18px;
-      font-weight: 400;
-      font-family: 'Allrounder Monument', sans-serif;
+      font-weight: bold;
       padding: 8px 0;
       transition: all 0.3s;
-      background-color: transparent;
-      border: none;
-      letter-spacing: 0.5px;
+      width: 50%;
+      text-align: center;
+    }
+
+    nav a:first-child {
+      transform: perspective(100px) rotateY(-5deg);
+      padding-right: 25px;
+    }
+
+    nav a:last-child {
+      transform: perspective(100px) rotateY(5deg);
+      padding-left: 25px;
     }
 
     nav a:hover {
@@ -125,10 +127,17 @@
       
       nav a {
         font-size: 16px;
-        margin: 0 15px;
+      }
+
+      nav a:first-child {
+        padding-right: 20px;
+      }
+
+      nav a:last-child {
+        padding-left: 20px;
       }
       
-      nav::after {
+      .nav-divider {
         height: 50%;
       }
       
@@ -140,10 +149,17 @@
     @media (max-width: 480px) {
       nav a {
         font-size: 14px;
-        margin: 0 10px;
+      }
+
+      nav a:first-child {
+        padding-right: 15px;
+      }
+
+      nav a:last-child {
+        padding-left: 15px;
       }
       
-      nav::after {
+      .nav-divider {
         height: 40%;
       }
     }
@@ -153,8 +169,11 @@
 
   <!-- Navbar -->
   <nav>
-    <a href="https://beyzamucahid.github.io/">ANA SAYFA</a>
-    <a href="https://beyzamucahid.github.io/description">DETAY & KATILIM</a>
+    <div class="nav-links">
+      <a href="https://beyzamucahid.github.io/">ANA SAYFA</a>
+      <div class="nav-divider"></div>
+      <a href="https://beyzamucahid.github.io/description">DETAY & KATILIM</a>
+    </div>
   </nav>
 
   <!-- Swiper -->
