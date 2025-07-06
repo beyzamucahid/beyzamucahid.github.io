@@ -64,6 +64,7 @@
       justify-content: center;
       align-items: center;
       background-color: #f6f5f4;
+      position: relative;
     }
 
     .swiper-slide img {
@@ -76,14 +77,17 @@
 
     .scroll-down {
       position: absolute;
-      bottom: 20px;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
       animation: bounceDown 2s infinite;
       pointer-events: none;
+      z-index: 10;
     }
 
     @keyframes bounceDown {
-      0%, 100% { transform: translateY(0); opacity: 0.8; }
-      50% { transform: translateY(10px); opacity: 1; }
+      0%, 100% { transform: translate(-50%, 0); opacity: 0.8; }
+      50% { transform: translate(-50%, 10px); opacity: 1; }
     }
 
     .swiper-pagination-bullet {
@@ -94,6 +98,10 @@
       nav a {
         font-size: 16px;
         margin: 0 8px;
+      }
+      
+      .scroll-down {
+        bottom: 20px;
       }
     }
   </style>
@@ -112,7 +120,7 @@
 
       <!-- Slide 1 -->
       <div class="swiper-slide">
-        <img src="https://beyzamucahid.github.io/static/img/cover.png" alt="Görsel 1" />
+        <img src="https://beyzamucahid.github.io/static/img/cover.png" alt="Görsel 1" data-swiper-zoomable="true" />
         <div class="scroll-down">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6F4F33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 5v14" />
@@ -121,7 +129,7 @@
         </div>
       </div>
 
-      <!-- Slide 2 (Zoom) -->
+      <!-- Slide 2 -->
       <div class="swiper-slide">
         <img src="https://beyzamucahid.github.io/static/img/cover2.png" alt="Görsel 2" data-swiper-zoomable="true" />
       </div>
