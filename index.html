@@ -15,7 +15,7 @@
   <meta property="og:url" content="https://beyzamucahid.github.io/" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Swiper Slider CSS -->
+  <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <style>
@@ -69,6 +69,7 @@
       align-items: center;
       background: #fff;
       flex-direction: column;
+      position: relative;
     }
 
     .swiper-slide img {
@@ -79,17 +80,19 @@
 
     .scroll-down {
       position: absolute;
-      bottom: 30px;
+      bottom: 40px;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 24px;
-      animation: bounce 1.5s infinite;
-      color: #6F4F33;
+      animation: bounceDown 2s infinite;
+      z-index: 10;
+      pointer-events: none;
+      opacity: 0.9;
     }
 
-    @keyframes bounce {
-      0%, 100% { transform: translate(-50%, 0); }
-      50% { transform: translate(-50%, 10px); }
+    @keyframes bounceDown {
+      0%   { transform: translateX(-50%) translateY(0); opacity: 0.8; }
+      50%  { transform: translateX(-50%) translateY(10px); opacity: 1; }
+      100% { transform: translateX(-50%) translateY(0); opacity: 0.8; }
     }
 
     .swiper-button-next,
@@ -133,10 +136,18 @@
   <!-- Slider -->
   <div class="swiper">
     <div class="swiper-wrapper">
+      <!-- Slide 1 -->
       <div class="swiper-slide">
         <img src="https://beyzamucahid.github.io/static/img/cover.png" alt="Görsel 1">
-        <div class="scroll-down">⬇</div>
+        <div class="scroll-down">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6F4F33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 5v14" />
+            <path d="M19 12l-7 7-7-7" />
+          </svg>
+        </div>
       </div>
+
+      <!-- Slide 2 -->
       <div class="swiper-slide">
         <img src="https://beyzamucahid.github.io/static/img/cover2.png" alt="Görsel 2">
       </div>
