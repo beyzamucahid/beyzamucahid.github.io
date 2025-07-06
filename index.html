@@ -91,7 +91,7 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: center; /* ortalandı */
+      justify-content: center; /* Masaüstü için ortalı */
       align-items: center;
       background-color: #f6f5f4;
       position: relative;
@@ -141,17 +141,18 @@
     }
 
     @media (max-width: 768px) {
-      nav {
-        padding: 12px 0;
-      }
-      nav a {
-        font-size: 16px;
-      }
+      nav { padding: 12px 0; }
+      nav a { font-size: 16px; }
       nav a:first-child { padding-right: 20px; }
       nav a:last-child { padding-left: 20px; }
       .nav-divider { height: 50%; }
       .swiper-slide img { max-height: calc(70vh - 50px); }
       .scroll-down-icon { bottom: 15px; }
+
+      /* Mobilde fotoğraf yukarı yaslansın */
+      .swiper-slide {
+        justify-content: flex-start;
+      }
     }
 
     @media (max-width: 480px) {
@@ -192,16 +193,21 @@
   <!-- Swiper -->
   <div class="swiper">
     <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
       <div class="swiper-slide">
         <div class="image-container">
           <img src="https://beyzamucahid.github.io/static/img/cover.png" alt="Görsel 1" />
         </div>
       </div>
+
+      <!-- Slide 2 -->
       <div class="swiper-slide">
         <div class="image-container">
           <img src="https://beyzamucahid.github.io/static/img/cover2.png" alt="Görsel 2" />
         </div>
       </div>
+
     </div>
     <div class="swiper-pagination"></div>
   </div>
@@ -220,20 +226,17 @@
       keyboard: true
     });
 
-    // Ok yönü için
+    // Ok yönünü değiştirme
     const arrow = document.getElementById("scrollArrow");
     swiper.on('slideChange', () => {
       const isLast = swiper.activeIndex === swiper.slides.length - 1;
-      const isFirst = swiper.activeIndex === 0;
 
       if (!isLast) {
-        // Aşağı bakan ok
         arrow.innerHTML = `
           <path d="M12 5v14" />
           <path d="M19 12l-7 7-7-7" />
         `;
       } else {
-        // Yukarı bakan ok
         arrow.innerHTML = `
           <path d="M12 19V5" />
           <path d="M5 12l7-7 7 7" />
