@@ -7,7 +7,8 @@
   <!-- Favicon -->
   <link rel="icon" href="https://beyzamucahid.github.io/static/img/cover.png" type="image/png">
 
-  <!-- Open Graph Etiketleri -->
+  <!-- Meta Etiketler -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta property="og:title" content="Beyza & Mucahid Wedding" />
   <meta property="og:description" content="Bir ömür diye çıktığımız bu yolda sizlerin de bize eşlik etmesinden mutluluk duyarız..." />
   <meta property="og:image" content="https://beyzamucahid.github.io/static/img/cover.png" />
@@ -19,12 +20,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
       background: #f6f5f4;
       font-family: Arial, sans-serif;
       color: #333;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
     }
 
     nav {
@@ -35,7 +39,7 @@
       background-color: #f6f5f4;
       padding: 12px 0;
       text-align: center;
-      z-index: 999;
+      z-index: 9999;
       border-bottom: 2px solid #6F4F33;
     }
 
@@ -64,35 +68,39 @@
     }
 
     .swiper-slide {
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #fff;
       flex-direction: column;
-      position: relative;
+      background: #fff;
+      width: 100%;
+      height: 100%;
     }
 
     .swiper-slide img {
-      max-width: 100%;
+      width: 100%;
+      max-width: 1000px;
+      height: auto;
       max-height: 90vh;
       object-fit: contain;
+      transition: all 0.3s ease;
     }
 
     .scroll-down {
       position: absolute;
-      bottom: 40px;
+      bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
+      z-index: 1000;
       animation: bounceDown 2s infinite;
-      z-index: 10;
       pointer-events: none;
-      opacity: 0.9;
+      opacity: 1;
     }
 
     @keyframes bounceDown {
-      0%   { transform: translateX(-50%) translateY(0); opacity: 0.8; }
-      50%  { transform: translateX(-50%) translateY(10px); opacity: 1; }
-      100% { transform: translateX(-50%) translateY(0); opacity: 0.8; }
+      0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.9; }
+      50% { transform: translateX(-50%) translateY(10px); opacity: 1; }
     }
 
     .swiper-button-next,
@@ -104,6 +112,7 @@
       background: #6F4F33;
     }
 
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       nav a {
         font-size: 16px;
@@ -119,8 +128,14 @@
       }
 
       .scroll-down {
-        font-size: 20px;
-        bottom: 20px;
+        bottom: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .scroll-down svg {
+        width: 28px;
+        height: 28px;
       }
     }
   </style>
