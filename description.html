@@ -77,34 +77,36 @@
       background-color: #666;
     }
 
-    /* Navbar Stili */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #B76E55; /* Navbar arka planı */
-      padding: 10px 0;
-      text-align: center;
-      z-index: 10;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge */
-    }
+  /* Navbar Stili */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f6f5f4; /* Navbar arka planını #f6f5f4 yapıyoruz */
+    padding: 10px 0;
+    text-align: center;
+    z-index: 10;
+    border-bottom: 2px solid #6F4F33; /* Navbar altına ince kahverengi çizgi */
+  }
 
-    nav a {
-      color: #fff;
-      margin: 0 20px;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-      padding: 8px 16px;
-      border-radius: 8px;
-      background-color: #6F4F33; /* Alt sınırdaki kahverengi tonunda yazı arka planı */
-      transition: background-color 0.3s;
-    }
+  nav a {
+    color: #333;
+    margin: 0 20px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: #f6f5f4; /* Arka plan hala #f6f5f4 */
+    border: 2px solid #6F4F33; /* Yazı etrafına kahverengi kare çerçeve */
+    transition: background-color 0.3s;
+  }
 
-    nav a:hover {
-      background-color: #8C5A3C; /* Hover'da biraz daha koyu kahverengi */
-    }
+  nav a:hover {
+    background-color: #e6e6e6; /* Hoverda daha açık gri */
+    border-color: #8C5A3C; /* Hoverda daha koyu kahverengi */
+  }
 
     /* Mobile responsive */
     @media (max-width: 768px) {
@@ -171,7 +173,7 @@
     }
 
     function katilma() {
-      window.scrollTo(0, 0); // Sayfanın başına dön
+        window.location.href = "https://beyzamucahid.github.io/";
     }
   </script>
 
