@@ -77,6 +77,35 @@
       background-color: #666;
     }
 
+    /* Navbar Stili */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #B76E55; /* Navbar arka planı */
+      padding: 10px 0;
+      text-align: center;
+      z-index: 10;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 20px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 8px;
+      background-color: #6F4F33; /* Alt sınırdaki kahverengi tonunda yazı arka planı */
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #8C5A3C; /* Hover'da biraz daha koyu kahverengi */
+    }
+
     /* Mobile responsive */
     @media (max-width: 768px) {
       .container {
@@ -103,7 +132,7 @@
   <!-- Navbar -->
   <nav>
     <a href="https://beyzamucahid.github.io/">Ana Sayfa</a>
-    <a href="https://beyzamucahid.github.io/detay">Detay & Katılım</a>
+    <a href="https://beyzamucahid.github.io/description">Detay & Katılım</a>
   </nav>
 
   <h1>Beyza & Mucahid Düğün Detayları</h1>
