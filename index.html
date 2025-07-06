@@ -7,7 +7,7 @@
   <!-- Favicon -->
   <link rel="icon" href="https://beyzamucahid.github.io/static/img/cover.png" type="image/png">
 
-  <!-- Meta Etiketler -->
+  <!-- Meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta property="og:title" content="Beyza & Mucahid Wedding" />
   <meta property="og:description" content="Bir ömür diye çıktığımız bu yolda sizlerin de bize eşlik etmesinden mutluluk duyarız..." />
@@ -64,15 +64,16 @@
     .swiper {
       width: 100%;
       height: 100vh;
-      margin-top: 70px;
+      margin-top: 70px; /* Navbar yüksekliği */
     }
 
     .swiper-slide {
       position: relative;
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
+      align-items: flex-start; /* görseller top hizalı */
+      justify-content: flex-start;
+      padding-top: 20px;
       background: #fff;
       width: 100%;
       height: 100%;
@@ -82,9 +83,8 @@
       width: 100%;
       max-width: 1000px;
       height: auto;
-      max-height: 90vh;
       object-fit: contain;
-      transition: all 0.3s ease;
+      margin: 0 auto;
     }
 
     .scroll-down {
@@ -92,7 +92,7 @@
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 1000;
+      z-index: 10000;
       animation: bounceDown 2s infinite;
       pointer-events: none;
       opacity: 1;
@@ -112,7 +112,6 @@
       background: #6F4F33;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 768px) {
       nav a {
         font-size: 16px;
@@ -148,7 +147,7 @@
     <a href="https://beyzamucahid.github.io/description">Detay & Katılım</a>
   </nav>
 
-  <!-- Slider -->
+  <!-- Swiper Slider -->
   <div class="swiper">
     <div class="swiper-wrapper">
       <!-- Slide 1 -->
