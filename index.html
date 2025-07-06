@@ -7,7 +7,7 @@
   <!-- Favicon -->
   <link rel="icon" href="https://beyzamucahid.github.io/static/img/cover.png" type="image/png">
 
-  <!-- Open Graph Etiketleri (WhatsApp önizleme için) -->
+  <!-- Open Graph Etiketleri -->
   <meta property="og:title" content="Beyza & Mucahid Wedding" />
   <meta property="og:description" content="Bir ömür diye çıktığımız bu yolda sizlerin de bize eşlik etmesinden mutluluk duyarız..." />
   <meta property="og:image" content="https://beyzamucahid.github.io/static/img/cover.png" />
@@ -15,224 +15,131 @@
   <meta property="og:url" content="https://beyzamucahid.github.io/" />
   <meta name="twitter:card" content="summary_large_image" />
 
+  <!-- Swiper Slider CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: #f6f5f4; /* İlk sayfa arka plan rengi */
+      background: #f6f5f4;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f6f5f4;
+      padding: 12px 0;
+      text-align: center;
+      z-index: 999;
+      border-bottom: 2px solid #6F4F33;
+    }
+
+    nav a {
+      color: #333;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 2px solid #6F4F33;
+      transition: background-color 0.3s;
+      background-color: #f6f5f4;
+    }
+
+    nav a:hover {
+      background-color: #e6e6e6;
+      border-color: #8C5A3C;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100vh;
+      margin-top: 70px; /* Navbar boşluğu */
+    }
+
+    .swiper-slide {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      flex-direction: column;
-      color: #333;
-      font-family: Arial, sans-serif;
-      transition: background-color 0.3s ease;
+      background: #fff;
     }
 
-    .white-bg {
-      background: #fff; /* İkinci sayfa için beyaz arka plan */
-    }
-
-    #image {
+    .swiper-slide img {
       max-width: 100%;
       max-height: 90vh;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-    #image:hover {
-      transform: scale(1.01);
-    }
-    #buttons {
-      display: none;
-      margin-top: 20px;
-    }
-    button {
-      margin: 0 10px;
-      padding: 10px 20px;
-      font-size: 18px;
-      border: none;
-      border-radius: 8px;
-      background-color: #444;
-      color: white;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-    button:hover {
-      background-color: #666;
+      object-fit: contain;
     }
 
-  /* Navbar Stili */
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #f6f5f4; /* Navbar arka planını #f6f5f4 yapıyoruz */
-    padding: 10px 0;
-    text-align: center;
-    z-index: 10;
-    border-bottom: 2px solid #6F4F33; /* Navbar altına ince kahverengi çizgi */
-  }
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #6F4F33;
+    }
 
-  nav a {
-    color: #333;
-    margin: 0 20px;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 8px;
-    background-color: #f6f5f4; /* Arka plan hala #f6f5f4 */
-    border: 2px solid #6F4F33; /* Yazı etrafına kahverengi kare çerçeve */
-    transition: background-color 0.3s;
-  }
+    .swiper-pagination-bullet {
+      background: #6F4F33;
+    }
 
-  nav a:hover {
-    background-color: #e6e6e6; /* Hoverda daha açık gri */
-    border-color: #8C5A3C; /* Hoverda daha koyu kahverengi */
-  }
+    @media (max-width: 768px) {
+      nav a {
+        font-size: 16px;
+        margin: 0 8px;
+      }
 
+      nav {
+        padding: 10px 0;
+      }
+
+      .swiper-slide img {
+        max-height: 70vh;
+      }
+    }
   </style>
 </head>
 <body>
+
   <!-- Navbar -->
   <nav>
     <a href="https://beyzamucahid.github.io/">Ana Sayfa</a>
     <a href="https://beyzamucahid.github.io/description">Detay & Katılım</a>
   </nav>
 
-  <img id="image" src="https://beyzamucahid.github.io/static/img/cover.png" alt="ilk görsel">
+  <!-- Slider -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="https://beyzamucahid.github.io/static/img/cover.png" alt="Görsel 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="https://beyzamucahid.github.io/static/img/cover2.png" alt="Görsel 2">
+      </div>
+    </div>
 
+    <!-- Oklar ve Noktalar -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    let showingFirst = true;
-    const image = document.getElementById("image");
-    const body = document.body;
-
-    image.addEventListener("click", function () {
-      if (showingFirst) {
-        image.src = "https://beyzamucahid.github.io/static/img/cover2.png";  // 2. görsel
-        body.classList.add("white-bg");  // Arka planı beyaza çevir
-      } else {
-        image.src = "https://beyzamucahid.github.io/static/img/cover.png";  // 1. görsel
-        body.classList.remove("white-bg");  // Arka planı eski rengine döndür
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
       }
-      showingFirst = !showingFirst;  // Görseli değiştir
     });
   </script>
-
 </body>
 </html>
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    background: #f6f5f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-    color: #333;
-    font-family: Arial, sans-serif;
-    transition: background-color 0.3s ease;
-  }
-
-  .white-bg {
-    background: #fff;
-  }
-
-  #image {
-    max-width: 100%;
-    max-height: 90vh;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-  }
-
-  #image:hover {
-    transform: scale(1.01);
-  }
-
-  #buttons {
-    display: none;
-    margin-top: 20px;
-  }
-
-  button {
-    margin: 0 10px;
-    padding: 10px 20px;
-    font-size: 18px;
-    border: none;
-    border-radius: 8px;
-    background-color: #444;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-
-  button:hover {
-    background-color: #666;
-  }
-
-  /* Navbar Stili */
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #f6f5f4;
-    padding: 10px 0;
-    text-align: center;
-    z-index: 10;
-    border-bottom: 2px solid #6F4F33;
-  }
-
-  nav a {
-    color: #333;
-    margin: 0 20px;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 8px;
-    background-color: #f6f5f4;
-    border: 2px solid #6F4F33;
-    transition: background-color 0.3s;
-  }
-
-  nav a:hover {
-    background-color: #e6e6e6;
-    border-color: #8C5A3C;
-  }
-
-  /* Media Query for Mobile */
-  @media (max-width: 768px) {
-    nav a {
-      font-size: 16px; /* Font size adjustment for smaller screens */
-      margin: 0 10px;  /* Adjust margins for smaller screens */
-    }
-
-    nav {
-      padding: 8px 0;  /* Less padding for smaller screens */
-    }
-
-    body {
-      font-size: 14px;  /* Adjust font size for smaller screens */
-    }
-  }
-
-  @media (max-width: 480px) {
-    nav a {
-      font-size: 14px;  /* Even smaller font size for very small screens */
-      margin: 0 5px;    /* Tighten margins */
-    }
-
-    body {
-      font-size: 12px;  /* Adjust the entire body font size */
-    }
-
-    #image {
-      max-height: 70vh;  /* Adjust image size for mobile */
-    }
-  }
-</style>
