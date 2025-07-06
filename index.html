@@ -121,7 +121,8 @@
       -webkit-user-drag: none;
     }
 
-    .scroll-down {
+    /* Sadece ilk slaytta görünecek ok */
+    .swiper-slide:first-child .scroll-down {
       position: absolute;
       bottom: 20px;
       left: 50%;
@@ -165,7 +166,7 @@
         max-height: 70vh;
       }
       
-      .scroll-down {
+      .swiper-slide:first-child .scroll-down {
         bottom: 15px;
       }
     }
@@ -191,7 +192,7 @@
         max-height: 60vh;
       }
       
-      .scroll-down {
+      .swiper-slide:first-child .scroll-down {
         bottom: 10px;
       }
     }
