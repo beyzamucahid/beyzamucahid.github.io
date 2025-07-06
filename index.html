@@ -16,7 +16,8 @@
 
   <style>
     html, body {
-      margin: 0; padding: 0;
+      margin: 0;
+      padding: 0;
       background: #f6f5f4;
       font-family: Arial, sans-serif;
       color: #333;
@@ -91,7 +92,7 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: center; /* Masaüstü için ortalı */
+      justify-content: center;
       align-items: center;
       background-color: #f6f5f4;
       position: relative;
@@ -149,9 +150,17 @@
       .swiper-slide img { max-height: calc(70vh - 50px); }
       .scroll-down-icon { bottom: 15px; }
 
-      /* Mobilde fotoğraf yukarı yaslansın */
+      /* Mobil için: üst hizalama ve boyutu sabitle */
       .swiper-slide {
         justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      .image-container {
+        flex: none;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 30px;
       }
     }
 
@@ -185,8 +194,8 @@
   <!-- Scroll Down Icon -->
   <div class="scroll-down-icon" id="scrollIcon">
     <svg id="scrollArrow" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6F4F33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path id="line1" d="M12 5v14" />
-      <path id="line2" d="M19 12l-7 7-7-7" />
+      <path d="M12 5v14" />
+      <path d="M19 12l-7 7-7-7" />
     </svg>
   </div>
 
@@ -226,7 +235,6 @@
       keyboard: true
     });
 
-    // Ok yönünü değiştirme
     const arrow = document.getElementById("scrollArrow");
     swiper.on('slideChange', () => {
       const isLast = swiper.activeIndex === swiper.slides.length - 1;
