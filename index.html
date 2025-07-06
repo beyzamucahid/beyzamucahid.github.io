@@ -123,3 +123,116 @@
 
 </body>
 </html>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f6f5f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    color: #333;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease;
+  }
+
+  .white-bg {
+    background: #fff;
+  }
+
+  #image {
+    max-width: 100%;
+    max-height: 90vh;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  #image:hover {
+    transform: scale(1.01);
+  }
+
+  #buttons {
+    display: none;
+    margin-top: 20px;
+  }
+
+  button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  button:hover {
+    background-color: #666;
+  }
+
+  /* Navbar Stili */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f6f5f4;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 10;
+    border-bottom: 2px solid #6F4F33;
+  }
+
+  nav a {
+    color: #333;
+    margin: 0 20px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: #f6f5f4;
+    border: 2px solid #6F4F33;
+    transition: background-color 0.3s;
+  }
+
+  nav a:hover {
+    background-color: #e6e6e6;
+    border-color: #8C5A3C;
+  }
+
+  /* Media Query for Mobile */
+  @media (max-width: 768px) {
+    nav a {
+      font-size: 16px; /* Font size adjustment for smaller screens */
+      margin: 0 10px;  /* Adjust margins for smaller screens */
+    }
+
+    nav {
+      padding: 8px 0;  /* Less padding for smaller screens */
+    }
+
+    body {
+      font-size: 14px;  /* Adjust font size for smaller screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    nav a {
+      font-size: 14px;  /* Even smaller font size for very small screens */
+      margin: 0 5px;    /* Tighten margins */
+    }
+
+    body {
+      font-size: 12px;  /* Adjust the entire body font size */
+    }
+
+    #image {
+      max-height: 70vh;  /* Adjust image size for mobile */
+    }
+  }
+</style>
