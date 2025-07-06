@@ -95,7 +95,7 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start; /* Değişti */
+      justify-content: flex-start;
       align-items: center;
       background-color: #f6f5f4;
       position: relative;
@@ -104,39 +104,39 @@
     }
 
     .image-container {
-      flex: 1;
+      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100%;
       padding: 20px;
       box-sizing: border-box;
     }
 
     .swiper-slide img {
       max-width: 100%;
-      max-height: calc(80vh - 50px); /* Ok için yer açtık */
+      max-height: 70vh;
       object-fit: contain;
       user-select: none;
       -webkit-user-drag: none;
     }
 
-    /* Ok stili */
-    .swiper-slide:first-child .scroll-down {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
+    /* OK STİLİ - KESİN ÇÖZÜM */
+    .first-slide-footer {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      margin-top: auto;
+    }
+
+    .scroll-down {
       animation: bounceDown 2s infinite;
       pointer-events: none;
-      z-index: 10;
-      width: 32px;
-      height: 32px;
     }
 
     @keyframes bounceDown {
-      0%, 100% { transform: translate(-50%, 0); opacity: 0.8; }
-      50% { transform: translate(-50%, 10px); opacity: 1; }
+      0%, 100% { transform: translateY(0); opacity: 0.8; }
+      50% { transform: translateY(10px); opacity: 1; }
     }
 
     .swiper-pagination-bullet {
@@ -165,11 +165,11 @@
       }
       
       .swiper-slide img {
-        max-height: calc(70vh - 50px);
+        max-height: 60vh;
       }
       
-      .swiper-slide:first-child .scroll-down {
-        bottom: 15px;
+      .first-slide-footer {
+        padding: 15px 0;
       }
     }
 
@@ -191,11 +191,11 @@
       }
       
       .swiper-slide img {
-        max-height: calc(60vh - 50px);
+        max-height: 50vh;
       }
       
-      .swiper-slide:first-child .scroll-down {
-        bottom: 10px;
+      .first-slide-footer {
+        padding: 10px 0;
       }
     }
   </style>
@@ -220,11 +220,13 @@
         <div class="image-container">
           <img src="https://beyzamucahid.github.io/static/img/cover.png" alt="Görsel 1" data-swiper-zoomable="true" />
         </div>
-        <div class="scroll-down">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6F4F33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 5v14" />
-            <path d="M19 12l-7 7-7-7" />
-          </svg>
+        <div class="first-slide-footer">
+          <div class="scroll-down">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6F4F33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 5v14" />
+              <path d="M19 12l-7 7-7-7" />
+            </svg>
+          </div>
         </div>
       </div>
 
