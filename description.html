@@ -25,7 +25,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding-top: 80px; /* Navbar için üst boşluk */
+      padding-top: 70px; /* Navbar yüksekliğine göre ayarlandı */
     }
 
     h1, h2, h3 {
@@ -77,36 +77,64 @@
       background-color: #666;
     }
 
-  /* Navbar Stili */
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #f6f5f4; /* Navbar arka planını #f6f5f4 yapıyoruz */
-    padding: 10px 0;
-    text-align: center;
-    z-index: 10;
-    border-bottom: 2px solid #6F4F33; /* Navbar altına ince kahverengi çizgi */
-  }
+    /* Yeni Navbar Stili */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f6f5f4;
+      padding: 15px 0;
+      text-align: center;
+      z-index: 10;
+      border-bottom: 2px solid #6F4F33;
+      display: flex;
+      justify-content: center;
+    }
 
-  nav a {
-    color: #333;
-    margin: 0 20px;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 8px;
-    background-color: #f6f5f4; /* Arka plan hala #f6f5f4 */
-    border: 2px solid #6F4F33; /* Yazı etrafına kahverengi kare çerçeve */
-    transition: background-color 0.3s;
-  }
+    .nav-links {
+      display: flex;
+      position: relative;
+      max-width: 400px;
+      width: 100%;
+    }
 
-  nav a:hover {
-    background-color: #e6e6e6; /* Hoverda daha açık gri */
-    border-color: #8C5A3C; /* Hoverda daha koyu kahverengi */
-  }
+    .nav-divider {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      height: 60%;
+      width: 2px;
+      background-color: #6F4F33;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 8px 0;
+      transition: all 0.3s;
+      width: 50%;
+      text-align: center;
+      background-color: transparent;
+      border: none;
+    }
+
+    nav a:first-child {
+      transform: perspective(100px) rotateY(-5deg);
+      padding-right: 25px;
+    }
+
+    nav a:last-child {
+      transform: perspective(100px) rotateY(5deg);
+      padding-left: 25px;
+    }
+
+    nav a:hover {
+      color: #8C5A3C;
+    }
 
     /* Mobile responsive */
     @media (max-width: 768px) {
@@ -118,6 +146,22 @@
       iframe {
         height: 250px;
       }
+
+      nav a {
+        font-size: 16px;
+      }
+
+      nav a:first-child {
+        padding-right: 20px;
+      }
+
+      nav a:last-child {
+        padding-left: 20px;
+      }
+      
+      .nav-divider {
+        height: 50%;
+      }
     }
 
     /* Small screen styles */
@@ -125,16 +169,35 @@
       button {
         width: 100%;
       }
+
+      nav a {
+        font-size: 14px;
+      }
+
+      nav a:first-child {
+        padding-right: 15px;
+      }
+
+      nav a:last-child {
+        padding-left: 15px;
+      }
+      
+      .nav-divider {
+        height: 40%;
+      }
     }
 
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- Yeni Navbar -->
   <nav>
-    <a href="https://beyzamucahid.github.io/">Ana Sayfa</a>
-    <a href="https://beyzamucahid.github.io/description">Detay & Katılım</a>
+    <div class="nav-links">
+      <a href="https://beyzamucahid.github.io/">ANA SAYFA</a>
+      <div class="nav-divider"></div>
+      <a href="https://beyzamucahid.github.io/description">DETAY & KATILIM</a>
+    </div>
   </nav>
 
   <h1>Beyza & Mucahid Düğün Detayları</h1>
