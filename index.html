@@ -96,7 +96,6 @@
   </style>
 </head>
 <body>
-
   <!-- Navbar -->
   <nav>
     <a href="https://beyzamucahid.github.io/">Ana Sayfa</a>
@@ -108,22 +107,18 @@
   <script>
     let showingFirst = true;
     const image = document.getElementById("image");
-    const buttons = document.getElementById("buttons");
     const body = document.body;
 
     image.addEventListener("click", function () {
       if (showingFirst) {
-        image.src = "https://beyzamucahid.github.io/static/img/cover2.png";
-        buttons.style.display = "block";
+        image.src = "https://beyzamucahid.github.io/static/img/cover2.png";  // 2. görsel
         body.classList.add("white-bg");  // Arka planı beyaza çevir
       } else {
-        image.src = "https://beyzamucahid.github.io/static/img/cover.png";
-        buttons.style.display = "none";
+        image.src = "https://beyzamucahid.github.io/static/img/cover.png";  // 1. görsel
         body.classList.remove("white-bg");  // Arka planı eski rengine döndür
       }
-      showingFirst = !showingFirst;
+      showingFirst = !showingFirst;  // Görseli değiştir
     });
-
   </script>
 
 </body>
