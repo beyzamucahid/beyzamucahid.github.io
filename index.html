@@ -19,23 +19,29 @@
     body {
       margin: 0;
       padding: 0;
-      background: #000;
+      background: #f6f5f4; /* İlk sayfa arka plan rengi */
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       flex-direction: column;
-      color: white;
+      color: #333;
       font-family: Arial, sans-serif;
+      transition: background-color 0.3s ease;
     }
+
+    .white-bg {
+      background: #fff; /* İkinci sayfa için beyaz arka plan */
+    }
+
     #image {
       max-width: 100%;
       max-height: 90vh;
       cursor: pointer;
-      transition: transform 0.3s ease;
+      transition: transform 0.2s ease;
     }
     #image:hover {
-      transform: scale(1.02);
+      transform: scale(1.01);
     }
     #buttons {
       display: none;
@@ -50,11 +56,12 @@
       background-color: #444;
       color: white;
       cursor: pointer;
-      transition: background-color 0.3s;
+      transition: background-color 0.2s;
     }
     button:hover {
       background-color: #666;
     }
+
     /* Navbar Stilleri */
     nav {
       position: fixed;
@@ -101,14 +108,17 @@
     let showingFirst = true;
     const image = document.getElementById("image");
     const buttons = document.getElementById("buttons");
+    const body = document.body;
 
     image.addEventListener("click", function () {
       if (showingFirst) {
         image.src = "https://www.filmonpaper.com/wp-content/uploads/2011/05/TheLordOfTheRingsTrilogy_onesheet_teaser_FrodoLookingUpStyle_USA-3.jpg";
         buttons.style.display = "block";
+        body.classList.add("white-bg");  // Arka planı beyaza çevir
       } else {
         image.src = "https://beyzamucahid.github.io/static/img/cover.png";
         buttons.style.display = "none";
+        body.classList.remove("white-bg");  // Arka planı eski rengine döndür
       }
       showingFirst = !showingFirst;
     });

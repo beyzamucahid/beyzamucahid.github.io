@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyza & Mucahid Wedding</title>
+
+  <!-- Open Graph Etiketleri -->
+  <meta property="og:title" content="Beyza & Mucahid Wedding" />
+  <meta property="og:description" content="Bir ömür diye çıktığımız bu yolda sizlerin de bize eşlik etmesinden mutluluk duyarız..." />
+  <meta property="og:image" content="https://beyzamucahid.github.io/static/img/cover.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://beyzamucahid.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    /* Genel stil */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f6f5f4;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 80px; /* Navbar için üst boşluk */
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 20px;
+      gap: 20px;
+    }
+
+    .event {
+      flex: 1;
+      min-width: 300px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+    }
+
+    .event-details {
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      margin-top: 20px;
+      background-color: #444;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #666;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      iframe {
+        height: 250px;
+      }
+    }
+
+    /* Small screen styles */
+    @media (max-width: 480px) {
+      button {
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="https://beyzamucahid.github.io/">Ana Sayfa</a>
+    <a href="https://beyzamucahid.github.io/detay">Detay & Katılım</a>
+  </nav>
+
+  <h1>Beyza & Mucahid Düğün Detayları</h1>
+
+  <div class="container">
+    <!-- Ankara Düğün -->
+    <div class="event">
+      <h2>Ankara Düğün</h2>
+      <div class="event-details">
+        <p><strong>Tarih:</strong> 02.08.2025 - 19:00</p>
+        <p><strong>Adres:</strong> İncek Mahallesi, Turgut Özal Blv. No:66, İncek/Ankara</p>
+      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3065.3016006380294!2d32.693887376629874!3d39.80022607154545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d33f4582345737%3A0xc858826a023352a6!2sRisus%20Wedding!5e0!3m2!1sen!2str!4v1751758783581!5m2!1sen!2str" loading="lazy"></iframe>
+    </div>
+
+    <!-- Malatya Düğün -->
+    <div class="event">
+      <h2>Malatya Düğün</h2>
+      <div class="event-details">
+        <p><strong>Tarih:</strong> 09.08.2025 - 19:30</p>
+        <p><strong>Adres:</strong> Kuzey Çevre Yolu Kavşağı, Sivas Yolu 7.Km, Yeşilyurt/Malatya</p>
+      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3126.727357613154!2d38.22104927657524!3d38.4015525718341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4077cb61008be22f%3A0xa6eac2e98e516dc7!2sMalatya%20%C5%9Eehr-i%20Davet!5e0!3m2!1sen!2str!4v1751760439419!5m2!1sen!2str" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <!-- Katılım Butonları -->
+  <div class="buttons">
+    <button onclick="katil()">Evet, Katılacağım</button>
+    <button onclick="katilma()">Hayır, Katılamayacağım</button>
+  </div>
+
+  <script>
+    function katil() {
+      window.location.href = "https://forms.gle/XoLKGpewkzDzoxCW8";
+    }
+
+    function katilma() {
+      window.scrollTo(0, 0); // Sayfanın başına dön
+    }
+  </script>
+
+</body>
+</html>
