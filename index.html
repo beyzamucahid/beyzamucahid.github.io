@@ -8,19 +8,11 @@
   <!-- Favicon -->
   <link rel="icon" href="https://beyzamucahid.github.io/static/img/cover.png" type="image/png" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Beyza & Mucahid Wedding" />
-  <meta property="og:description" content="Bir ömür diye çıktığımız bu yolda sizlerin de bize eşlik etmesinden mutluluk duyarız..." />
-  <meta property="og:image" content="https://beyzamucahid.github.io/static/img/cover.png" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://beyzamucahid.github.io/" />
-  <meta name="twitter:card" content="summary_large_image" />
-
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <style>
-    html, body {
+    html, body, .swiper, .swiper-slide {
       margin: 0;
       padding: 0;
       background: #f6f5f4;
@@ -73,8 +65,8 @@
       justify-content: flex-start;
       align-items: center;
       padding-top: 20px;
-      background: #fff;
       height: 100%;
+      background-color: #f6f5f4;
     }
 
     .swiper-slide img {
@@ -115,6 +107,10 @@
       .swiper-slide img {
         max-height: 65vh;
       }
+
+      .scroll-down {
+        margin-top: 10px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -133,7 +129,7 @@
     <a href="https://beyzamucahid.github.io/description">Detay & Katılım</a>
   </nav>
 
-  <!-- Swiper Slider -->
+  <!-- Swiper -->
   <div class="swiper">
     <div class="swiper-wrapper">
 
@@ -148,14 +144,14 @@
         </div>
       </div>
 
-      <!-- Slide 2 -->
+      <!-- Slide 2 (Zoomable) -->
       <div class="swiper-slide">
-        <img src="https://beyzamucahid.github.io/static/img/cover2.png" alt="Görsel 2" />
-        <!-- BU SLAYTTA OK YOK -->
+        <div class="swiper-zoom-container">
+          <img src="https://beyzamucahid.github.io/static/img/cover2.png" alt="Görsel 2" />
+        </div>
       </div>
 
     </div>
-
     <div class="swiper-pagination"></div>
   </div>
 
@@ -164,7 +160,7 @@
   <script>
     const swiper = new Swiper('.swiper', {
       direction: 'vertical',
-      loop: true,
+      loop: false, // Kaydırınca geri dönme kapalı
       pagination: {
         el: '.swiper-pagination',
         clickable: true
@@ -172,6 +168,9 @@
       mousewheel: true,
       keyboard: {
         enabled: true
+      },
+      zoom: {
+        maxRatio: 3
       }
     });
   </script>
